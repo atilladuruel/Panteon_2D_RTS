@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Background Sprite Atlas
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 1
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 2800000, guid: 9564493b119943c45bcdf9d6af1e2c73, type: 3}
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: -3461943368992774290, guid: 9564493b119943c45bcdf9d6af1e2c73, type: 3}
+  - {fileID: -991740590259804556, guid: 9564493b119943c45bcdf9d6af1e2c73, type: 3}
+  - {fileID: -3619272387007512611, guid: 9564493b119943c45bcdf9d6af1e2c73, type: 3}
+  - {fileID: 2551209007194592528, guid: 9564493b119943c45bcdf9d6af1e2c73, type: 3}
+  - {fileID: -361568328315654927, guid: 9564493b119943c45bcdf9d6af1e2c73, type: 3}
+  - {fileID: 7958636895067619189, guid: 9564493b119943c45bcdf9d6af1e2c73, type: 3}
+  - {fileID: 1534995586385429790, guid: 9564493b119943c45bcdf9d6af1e2c73, type: 3}
+  - {fileID: 3119242720617749734, guid: 9564493b119943c45bcdf9d6af1e2c73, type: 3}
+  - {fileID: -7813649270120133498, guid: 9564493b119943c45bcdf9d6af1e2c73, type: 3}
+  - {fileID: 8674671420101990183, guid: 9564493b119943c45bcdf9d6af1e2c73, type: 3}
+  - {fileID: 1352419789835661786, guid: 9564493b119943c45bcdf9d6af1e2c73, type: 3}
+  - {fileID: 6855903716516672755, guid: 9564493b119943c45bcdf9d6af1e2c73, type: 3}
+  - {fileID: 4390780719727822704, guid: 9564493b119943c45bcdf9d6af1e2c73, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - 16x16_tiles_A_0
+  - 16x16_tiles_A_1
+  - 16x16_tiles_A_2
+  - 16x16_tiles_A_3
+  - 16x16_tiles_A_4
+  - 16x16_tiles_A_5
+  - 16x16_tiles_A_6
+  - 16x16_tiles_A_7
+  - 16x16_tiles_A_12
+  - 16x16_tiles_A_8
+  - 16x16_tiles_A_11
+  - 16x16_tiles_A_9
+  - 16x16_tiles_A_10
+  m_RenderDataMap: {}
+  m_Tag: Background Sprite Atlas
+  m_IsVariant: 0
