@@ -32,7 +32,7 @@ public class UIController : MonoBehaviour
                 _productionMenuOpened = animator.GetBool("IsOpen");
             }
         }
-        
+
         if (informativeMenuGameObject != null)
         {
             Animator animator = informativeMenuGameObject.GetComponent<Animator>();
@@ -55,7 +55,7 @@ public class UIController : MonoBehaviour
             }
         }
     }
-    
+
     public void InformativeMenuSlideController()
     {
         if (informativeMenuGameObject != null)
