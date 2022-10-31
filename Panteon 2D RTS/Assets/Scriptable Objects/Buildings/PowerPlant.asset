@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: PowerPlant
   m_EditorClassIdentifier: 
   name: PowerPlant
-  sprite: {fileID: 6121683534337745368, guid: 2529f58c0f0f4784d925363eac539680, type: 3}
-  size: {x: 2.5, y: 3}
+  sprite: {fileID: 21300000, guid: 3f6ce6079dcf3b14889b5d8072cb0bc3, type: 3}
+  size: {x: 3, y: 4}
   products: []

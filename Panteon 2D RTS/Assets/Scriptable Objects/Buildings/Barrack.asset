@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Barrack
   m_EditorClassIdentifier: 
   name: Barrack
-  sprite: {fileID: -5422089306815290780, guid: 2529f58c0f0f4784d925363eac539680, type: 3}
-  size: {x: 4, y: 4}
+  sprite: {fileID: 21300000, guid: 0a647c122d474f64cbd733fa8533a61e, type: 3}
+  size: {x: 2, y: 2}
   products:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 8a74a2b125a4e8a4d8492d915173af02, type: 2}
+  - {fileID: 11400000, guid: 24b297c5b5f54d94ca9f200c671b7deb, type: 2}
+  - {fileID: 11400000, guid: a2f3b76c9f39f5e4fa2e36ec767bce48, type: 2}

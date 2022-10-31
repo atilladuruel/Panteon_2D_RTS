@@ -5,37 +5,50 @@ using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
+    public static UIController instance { get; private set; }//Singleton pattern created for using some methods out of this script
+
+    [SerializeField]
+    private GameObject _productionMenuGameObject;
+    [SerializeField]
+    private GameObject _informativeMenuGameObject;
+    [SerializeField]
+    private Text _informativeItemTitle;
+    [SerializeField]
+    private Image _informativeItemImage;
+    [SerializeField]
+    private GameObject _productScrollContentGameObject;
+    [SerializeField]
+    private GameObject _productButtonPrefab;
+
     private bool _productionMenuOpened;
     private bool _informativeMenuOpened;
 
-
-    [SerializeField]
-    private GameObject productionMenuGameObject;
-    [SerializeField]
-    private GameObject informativeMenuGameObject;
-
-    [SerializeField]
-    private Button informationBackButton;
-
-    private void Start()
+    private void Awake()
     {
+        if (instance != null && instance != this)//If there is an instance already created, it will be destroyed here
+        {
+            Destroy(this);
+            return;
+        }
+        instance = this;
         ContollerInitialize();
     }
 
-    private void ContollerInitialize()
+
+    private void ContollerInitialize()//Initialize animation controller in controller class
     {
-        if (productionMenuGameObject != null)
+        if (_productionMenuGameObject != null)
         {
-            Animator animator = productionMenuGameObject.GetComponent<Animator>();
+            Animator animator = _productionMenuGameObject.GetComponent<Animator>();
             if (animator != null)
             {
                 _productionMenuOpened = animator.GetBool("IsOpen");
             }
         }
 
-        if (informativeMenuGameObject != null)
+        if (_informativeMenuGameObject != null)
         {
-            Animator animator = informativeMenuGameObject.GetComponent<Animator>();
+            Animator animator = _informativeMenuGameObject.GetComponent<Animator>();
             if (animator != null)
             {
                 _informativeMenuOpened = animator.GetBool("IsOpen");
@@ -43,11 +56,11 @@ public class UIController : MonoBehaviour
         }
     }
 
-    public void ProductionMenuSlideController()
+    public void ProductionMenuSlideController()//Shows and hides Production menu due to its own animation
     {
-        if (productionMenuGameObject != null)
+        if (_productionMenuGameObject != null)
         {
-            Animator animator = productionMenuGameObject.GetComponent<Animator>();
+            Animator animator = _productionMenuGameObject.GetComponent<Animator>();
             if (animator != null)
             {
                 _productionMenuOpened = !animator.GetBool("IsOpen");
@@ -56,16 +69,39 @@ public class UIController : MonoBehaviour
         }
     }
 
-    public void InformativeMenuSlideController()
+    public void InformativeMenuSlideController()//Just Basic Open and Close Method For Informative Menu Animation
     {
-        if (informativeMenuGameObject != null)
+        if (_informativeMenuGameObject != null)
         {
-            Animator animator = informativeMenuGameObject.GetComponent<Animator>();
+            Animator animator = _informativeMenuGameObject.GetComponent<Animator>();
             if (animator != null)
             {
                 _informativeMenuOpened = !animator.GetBool("IsOpen");
                 animator.SetBool("IsOpen", _informativeMenuOpened);
+                if (!_informativeMenuOpened)
+                {
+                    _productScrollContentGameObject.SetActive(false);
+
+                }
             }
         }
     }
+    public void InformativeMenuSlideController(Buildings buildings)//Informative Panel Animation with Specification Assignment
+    {
+        if (_informativeMenuGameObject != null)
+        {
+            Animator animator = _informativeMenuGameObject.GetComponent<Animator>();
+            if (animator != null)
+            {
+                _informativeMenuOpened = !animator.GetBool("IsOpen");
+                animator.SetBool("IsOpen", _informativeMenuOpened);
+
+                _informativeItemTitle.text = buildings.name;
+                _informativeItemImage.sprite = buildings.sprite;
+
+                _productScrollContentGameObject.SetActive(buildings.products.Count > 0);
+            }
+        }
+    }
+
 }

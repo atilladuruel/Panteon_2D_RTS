@@ -2,64 +2,71 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BuildingPlacement : MonoBehaviour
+public class BuildingPlacement : MonoBehaviour //Cloning objects and placing in game.
 {
-    [SerializeField]
-    private GameObject parentGameObject;
 
     [SerializeField]
-    private GameObject barrackGameObject;
+    private GameObject _barrackGameObject;//Game object holds barrack prefab game object
     [SerializeField]
-    private GameObject powerPlantGameObject;
+    private GameObject _powerPlantGameObject;//Power plant prefab
     [SerializeField]
-    private GameObject headQuarterGameObject;
+    private GameObject _headQuarterGameObject;//Head quarter prefab
 
 
     [SerializeField]
-    private GameObject _gridPlanesStockGameObject;
+    private GameObject _gridPlanesStockGameObject;//Parent object of panels that represent places where the player can or cannot play
 
 
-    private GameObject currentPlacingGameObject;
+    private GameObject _currentPlacingGameObject;//Currently placing building if there is one
 
-    private void Update()
+    private void Start()
     {
-        if (!parentGameObject)
-            Debug.Log("parent null");
+        _gridPlanesStockGameObject.SetActive(false);//deactive planes at the start
     }
 
-    public void BarrackPlacement()
+
+    public void BarrackPlacement()//Barack Instantiation 
     {
-        if (currentPlacingGameObject == null)
+        if (_currentPlacingGameObject == null)
         {
-            if (barrackGameObject != null)
+            if (_barrackGameObject != null)
             {
-                currentPlacingGameObject = Instantiate(barrackGameObject, parentGameObject.transform);
-                Debug.Log("Instatiate Barrack");
+                _gridPlanesStockGameObject.SetActive(true);
+                _currentPlacingGameObject = Instantiate(_barrackGameObject, transform);
             }
         }
     }
 
-    public void PowerPlantPlacement()
+    public void PowerPlantPlacement()//Power Plant instantiation
     {
-        if (currentPlacingGameObject == null)
+        if (_currentPlacingGameObject == null)
         {
-            if (powerPlantGameObject != null)
+            if (_powerPlantGameObject != null)
             {
-                currentPlacingGameObject = Instantiate(powerPlantGameObject, parentGameObject.transform);
-                Debug.Log("Instatiate Power Plant");
+                _gridPlanesStockGameObject.SetActive(true);
+                _currentPlacingGameObject = Instantiate(_powerPlantGameObject, transform);
             }
         }
     }
 
-    public void HeadQuarterPlacement()
+    public void HeadQuarterPlacement()//Headquarter instantiation
     {
-        if (currentPlacingGameObject == null)
+        if (_currentPlacingGameObject == null)
         {
-            if (headQuarterGameObject != null)
+            if (_headQuarterGameObject != null)
             {
-                currentPlacingGameObject = Instantiate(headQuarterGameObject, parentGameObject.transform);
-                Debug.Log("Instatiate Headquarter");
+                _gridPlanesStockGameObject.SetActive(true);
+                _currentPlacingGameObject = Instantiate(_headQuarterGameObject, transform);
             }
+        }
+    }
+
+    public void DoneAndCancelPlacement()//Control after building placement is completed or cancelled
+    {
+        if (_currentPlacingGameObject != null)
+        {
+            _gridPlanesStockGameObject.SetActive(false);
+            _currentPlacingGameObject = null;
         }
     }
 

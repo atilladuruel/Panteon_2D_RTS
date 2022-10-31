@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: HeadQuarter
   m_EditorClassIdentifier: 
   name: HeadQuarter
-  sprite: {fileID: -3672914969698219484, guid: 2529f58c0f0f4784d925363eac539680, type: 3}
-  size: {x: 2, y: 6}
+  sprite: {fileID: 21300000, guid: c80c31c0d7831ba409ee14daba13209b, type: 3}
+  size: {x: 2, y: 4}
   products: []
